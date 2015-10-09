@@ -1,6 +1,9 @@
 "use strict";
 
-function openMainMenu(replace = true) {
+function openMainMenu(replace) {
+    if ( typeof(replace) === "undefined" ) {
+        replace = true;
+    }
     var div = document.createElement("div");
     div.className = "menu";
     var h1 = document.createElement("h1");
