@@ -1,3 +1,6 @@
-[
-    "mainmenu"
-]
+{
+    "default": "mainMenu",
+    "menus": [
+        "mainMenu"
+    ]
+}
