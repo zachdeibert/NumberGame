@@ -2,6 +2,7 @@
 
 function openMainMenu(replace = true) {
     var div = document.createElement("div");
+    div.className = "menu";
     var h1 = document.createElement("h1");
     var text = document.createTextNode("Number Game");
     h1.appendChild(text);
