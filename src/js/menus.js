@@ -25,10 +25,10 @@ function loadMenus() {
                             window[name]();
                         };
                     }
-                    var style = document.createElement("style");
+                    var style = document.createElement("link");
                     style.setAttribute("rel", "stylesheet");
                     style.setAttribute("type", "text/css");
-                    style.setAttribute("src", "css/" + obj.menus[i] + ".css");
+                    style.setAttribute("href", "css/" + obj.menus[i] + ".css");
                     document.head.appendChild(script);
                     document.head.appendChild(style);
                 }
