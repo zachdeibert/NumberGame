@@ -3,8 +3,11 @@ div.menu.join-splash {
     color: #FFFFFF;
     text-align: center;
 }
-div.menu.join-splash div {
+div.menu.join-splash div.text-box {
     position: absolute;
     bottom: 50%;
+    width: 100%;
+}
+div.menu.join-splash div.btn {
     width: 100%;
 }
