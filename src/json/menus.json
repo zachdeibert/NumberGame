@@ -1,6 +1,7 @@
 {
     "default": "mainMenu",
     "menus": [
-        "mainMenu"
+        "mainMenu",
+        "joiningSplash"
     ]
 }

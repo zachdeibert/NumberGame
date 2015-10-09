@@ -1,0 +1,10 @@
+div.menu.join-splash {
+    background-color: #121212;
+    color: #FFFFFF;
+    text-align: center;
+}
+div.menu.join-splash div {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+}
