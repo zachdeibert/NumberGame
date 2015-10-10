@@ -13,5 +13,10 @@ Math.factorial = function(n) {
 };
 
 Math.nCr = function(n, r) {
-    return Math.factorial(n) / (Math.factorial(r) * Math.factorial(n - r));
+    var denom = Math.factorial(r) * Math.factorial(n - r);
+    if ( denom == 0 ) {
+        return 1;
+    } else {
+        return Math.factorial(n) / denom;
+    }
 };
