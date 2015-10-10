@@ -2,6 +2,7 @@
     "default": "mainMenu",
     "menus": [
         "mainMenu",
-        "joiningSplash"
+        "joiningSplash",
+        "gameView"
     ]
 }
