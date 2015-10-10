@@ -1,0 +1,35 @@
+div.menu.game-view {
+    background-color: #101010;
+}
+div.menu.game-view table {
+    position: absolute;
+}
+div.menu.game-view td.padding {
+    background-color: #101010;
+}
+div.menu.game-view td.cell {
+    background-color: #DADADA;
+    border: 1px solid #101010;
+}
+@media (min-device-aspect-ratio: 2/1) {
+    div.menu.game-view td.cell {
+        width: 25vh;
+        height: 12.5vh;
+    }
+    div.menu.game-view table {
+        left: 50vw;
+        top: 0;
+        margin-left: -100vh;
+    }
+}
+@media (max-device-aspect-ratio: 2/1) {
+    div.menu.game-view td.cell {
+        width: 12.5vw;
+        height: 6.25vw;
+    }
+    div.menu.game-view table {
+        left: 0;
+        top: 50vh;
+        margin-top: -25vw;
+    }
+}
