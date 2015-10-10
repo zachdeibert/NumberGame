@@ -9,5 +9,6 @@ div.menu.join-splash div.text-box {
     width: 100%;
 }
 div.menu.join-splash div.btn {
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
 }
