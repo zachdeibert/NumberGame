@@ -1,10 +1,12 @@
 CACHE MANIFEST
 # Last Modified:
-# 2015-10-10 08:24:24
+# 2015-10-10 10:59:26
 index.html
 css/menu.css
 js/xhr.js
 js/config.js
+js/math.js
+js/server.js
 js/menus.js
 js/index.js
 offline.html
