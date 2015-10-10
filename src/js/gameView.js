@@ -18,6 +18,7 @@ function openGameView(replace) {
             var td = document.createElement("td");
             td.className = "cell";
             td.setAttribute("colspan", 2);
+            td.appendChild(document.createTextNode("" + Math.nCr(7 - i, (j - i) / 2)));
             tr.appendChild(td);
         }
         var rightpad = document.createElement("td");

@@ -10,6 +10,8 @@ div.menu.game-view td.padding {
 div.menu.game-view td.cell {
     background-color: #DADADA;
     border: 1px solid #101010;
+    text-align: center;
+    font-weight: bold;
 }
 @media (min-device-aspect-ratio: 2/1) {
     div.menu.game-view td.cell {
