@@ -16,6 +16,9 @@ function openJoiningSplash(replace) {
     var cancel = document.createElement("div");
     cancel.classList.add("btn");
     cancel.classList.add("btn-danger");
+    cancel.onclick = function() {
+        openMainMenu();
+    };
     cancel.appendChild(document.createTextNode("Cancel"));
     div.appendChild(h1);
     div.appendChild(h2);
