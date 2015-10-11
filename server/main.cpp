@@ -32,8 +32,11 @@ void handleMessage(connection_hdl hdl, server<config::asio>::message_ptr msg) {
         delete proto;
         if ( diff == 0 ) {
             // Switch protocols
-            srv->get_con_from_hdl(hdl)->set_message_handler(protocols[i]->getHandler(srv));
-            srv->send(hdl, "S", frame::opcode::text);
+            protocol::handlers handlers = protocols[i]->getHandler(srv);
+            endpoint<connection<config::asio>, config::asio>::connection_ptr conn = srv->get_con_from_hdl(hdl);
+            conn->set_message_handler(handlers.message);
+            conn->set_close_handler(handlers.close);
+            srv->send(hdl, "S", opcode::text);
             return;
         }
     }

@@ -1,4 +1,8 @@
 #include "protocolV1.h"
+using namespace std;
+using namespace websocketpp::frame;
+using namespace websocketpp::lib;
+using namespace websocketpp::lib::placeholders;
 
 /*
   Client -> Server
@@ -11,11 +15,15 @@
     d: Disconnect
 
   Server -> Client
-    l[id],[id],[id],[...]: List of running games
+    g[id],[id],[id],[...]: List of running games
     t[row][changes]: Turn taken by player
-    j[id]: Game joined
-    T[name]: Player [name]'s turn
+    j[id][name],[name],[name]: Game joined
+    T[id][name]: Player's turn changed
     e[desc]: Error
+    l[id][name]: Player temporary lost
+    L[id][name]: Player permanently lost
+    w[id][name]: Player un-lost
+    W[id][name]: Player won
  */
 
 protocolV1::world::world() {}
@@ -52,18 +60,71 @@ void protocolV1::world::handler(connection_hdl hdl, server<config::asio>::messag
     }
 }
 
-void protocolV1::world::listGames(connection_hdl hdl) {}
+void protocolV1::world::closeHandler(connection_hdl hdl) {
+    disconnect(hdl);
+}
 
-void protocolV1::world::spectateGame(connection_hdl hdl, char *data) {}
+class protocolV1::world::player *protocolV1::world::createPlayer(connection_hdl hdl, char *name) {
+    struct sendData data;
+    data.hdl = hdl;
+    data.srv = srv;
+    class player *user = new class player(bind(&world::sendFunc, data, ::_1), name);
+    players.insert(pair<connection_hdl, class player *>(hdl, user));
+    return user;
+}
 
-void protocolV1::world::queueJoining(connection_hdl hdl, char *data) {}
+class protocolV1::world::game *protocolV1::world::createGame(class protocolV1::world::player *player) {
+    class player *players[3];
+    players[0] = queue[0];
+    players[1] = queue[1];
+    players[2] = player;
+    for ( list<class game *>::iterator it = games.begin(); it != games.end(); it++ ) {
+        if ( *it == NULL || !(*it)->isRunning() ) {
+            return *it = new class game(players, distance(games.begin(), it));
+        }
+    }
+    class game *game = new class game(players, games.size());
+    games.push_back(game);
+    return game;
+}
 
-void protocolV1::world::exitQueue(connection_hdl hdl) {}
+void protocolV1::world::listGames(connection_hdl hdl) {
+    srv->send(hdl, "ENot Implemented", opcode::text);
+}
 
-void protocolV1::world::quitGame(connection_hdl hdl, char *data) {}
+void protocolV1::world::spectateGame(connection_hdl hdl, char *data) {
+    srv->send(hdl, "ENot Implemented", opcode::text);
+}
 
-void protocolV1::world::takeTurn(connection_hdl hdl, char *data) {}
+void protocolV1::world::queueJoining(connection_hdl hdl, char *data) {
+    srv->send(hdl, "ENot Implemented", opcode::text);
+}
 
-void protocolV1::world::disconnect(connection_hdl hdl) {}
+void protocolV1::world::exitQueue(connection_hdl hdl) {
+    srv->send(hdl, "ENot Implemented", opcode::text);
+}
 
-void protocolV1::world::unknownOpcode(connection_hdl hdl, char opcode, char *data) {}
+void protocolV1::world::quitGame(connection_hdl hdl, char *data) {
+    srv->send(hdl, "ENot Implemented", opcode::text);
+}
+
+void protocolV1::world::takeTurn(connection_hdl hdl, char *data) {
+    srv->send(hdl, "ENot Implemented", opcode::text);
+}
+
+void protocolV1::world::disconnect(connection_hdl hdl) {
+    map<connection_hdl, class player *>::iterator player = players.find(hdl);
+    if ( player != players.end() ) {
+        for ( list<class game *>::iterator it = games.begin(); it != games.end(); it++ ) {
+            (*it)->playerDisconnected(player->second);
+        }
+    }
+}
+
+void protocolV1::world::unknownOpcode(connection_hdl hdl, char opcode, char *data) {
+    srv->send(hdl, "EUnknown opcode", opcode::text);
+}
+
+void protocolV1::world::sendFunc(struct protocolV1::world::sendData data, char *msg) {
+    data.srv->send(data.hdl, msg, opcode::text);
+}

@@ -8,10 +8,14 @@ using namespace websocketpp::lib;
 
 class protocol {
     public:
-        typedef methodPointerDuo<connection_hdl, server<config::asio>::message_ptr> handler;
+        struct handlers {
+            connection<config::asio>::message_handler message;
+            close_handler close;
+        };
+
         virtual ~protocol();
         virtual char *getVersion();
-        virtual connection<config::asio>::message_handler getHandler(server<config::asio> *) = 0;
+        virtual struct handlers getHandler(server<config::asio> *) = 0;
 
     protected:
         protocol(char *);

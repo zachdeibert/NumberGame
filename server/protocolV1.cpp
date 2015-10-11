@@ -9,10 +9,13 @@ protocolV1::protocolV1() : protocol(const_cast<char *>("v1")) {}
 
 protocolV1::~protocolV1() {}
 
-connection<config::asio>::message_handler protocolV1::getHandler(server<config::asio> *srv) {
+struct protocol::handlers protocolV1::getHandler(server<config::asio> *srv) {
     map<server<config::asio> *, class world *>::iterator it = worlds.find(srv);
     class world *wrld = it == worlds.end() ? createWorld(srv) : it->second;
-    return bind(&world::handler, wrld, ::_1, ::_2);
+    struct protocol::handlers handlers;
+    handlers.message = bind(&world::handler, wrld, ::_1, ::_2);
+    handlers.close = bind(&world::closeHandler, wrld, ::_1);
+    return handlers;
 }
 
 class protocolV1::world *protocolV1::createWorld(server<config::asio> *server) {
