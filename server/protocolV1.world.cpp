@@ -1,3 +1,4 @@
+#include <cmath>
 #include "protocolV1.h"
 using namespace std;
 using namespace websocketpp::frame;
@@ -89,7 +90,32 @@ class protocolV1::world::game *protocolV1::world::createGame(class protocolV1::w
 }
 
 void protocolV1::world::listGames(connection_hdl hdl) {
-    srv->send(hdl, "ENot Implemented", opcode::text);
+    int max = games.size();
+    double maxLogExact = log10((double) max);
+    int maxLog = (int) maxLogExact;
+    if ( maxLog < maxLogExact ) {
+        maxLog += 1;
+    }
+    int maxLen = (maxLog + 1) * max + 1;
+    char *msg = new char[maxLen];
+    bzero(msg, maxLen);
+    msg[0] = 'g';
+    int i = 1;
+    bool first = true;
+    for ( list<class game *>::iterator it = games.begin(); it != games.end(); it++ ) {
+        if ( *it != NULL && (*it)->isRunning() ) {
+            if ( first ) {
+                first = false;
+            } else {
+                msg[i++] = ',';
+            }
+            sprintf(msg + i, "%d", (*it)->getId());
+            while ( msg[i] != 0 ) {
+                i++;
+            }
+        }
+    }
+    srv->send(hdl, msg, opcode::text);
 }
 
 void protocolV1::world::spectateGame(connection_hdl hdl, char *data) {

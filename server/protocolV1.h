@@ -65,7 +65,7 @@ class protocolV1 : public protocol {
                 virtual void spectateGame(connection_hdl, char *);
                 virtual void queueJoining(connection_hdl, char *);
                 virtual void exitQueue(connection_hdl hdl);
-                virtual void quitGame(connection_hdl, char *);
+                virtual void quitGame(connection_hdl);
                 virtual void takeTurn(connection_hdl, char *);
                 virtual void disconnect(connection_hdl);
                 virtual void unknownOpcode(connection_hdl, char, char *);
