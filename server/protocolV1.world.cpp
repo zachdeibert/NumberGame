@@ -10,7 +10,7 @@ using namespace websocketpp::lib::placeholders;
     s[id]: Spectate game
     j[name]: Queue to join game
     e: Exit queue
-    q[id]: Quit game
+    q: Quit game
     t[row][changes]: Take turn
     d: Disconnect
 
@@ -46,7 +46,7 @@ void protocolV1::world::handler(connection_hdl hdl, server<config::asio>::messag
             exitQueue(hdl);
             break;
         case 'q':
-            quitGame(hdl, data + 1);
+            quitGame(hdl);
             break;
         case 't':
             takeTurn(hdl, data + 1);
@@ -104,7 +104,7 @@ void protocolV1::world::exitQueue(connection_hdl hdl) {
     srv->send(hdl, "ENot Implemented", opcode::text);
 }
 
-void protocolV1::world::quitGame(connection_hdl hdl, char *data) {
+void protocolV1::world::quitGame(connection_hdl hdl) {
     srv->send(hdl, "ENot Implemented", opcode::text);
 }
 
