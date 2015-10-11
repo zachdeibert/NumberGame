@@ -32,7 +32,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Linker>
+			<Add library="boost_system" />
+			<Add library="boost_chrono" />
+		</Linker>
 		<Unit filename="main.cpp" />
+		<Unit filename="methodPointable.cpp" />
+		<Unit filename="methodPointable.h" />
+		<Unit filename="methodPointer.cpp" />
+		<Unit filename="methodPointer.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="protocol.cpp" />
+		<Unit filename="protocol.h" />
+		<Unit filename="protocolV1.cpp" />
+		<Unit filename="protocolV1.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

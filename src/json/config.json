@@ -1,4 +1,5 @@
 {
     "debug": true,
-    "server": "ws://localhost:8080/"
+    "server": "ws://localhost:8080/",
+    "protocol": "v1"
 }
