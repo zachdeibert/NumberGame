@@ -24,6 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using System.Threading;
 using SuperSocket.SocketBase;
 using SuperSocket.SocketBase.Config;
 using SuperWebSocket;
@@ -132,7 +133,12 @@ namespace NumberGame.Server {
 				return;
 			}
 			Console.WriteLine("Press any key to stop the server.");
-			Console.ReadKey();
+			try {
+				Console.ReadKey();
+			} catch ( InvalidOperationException ) {
+				Console.WriteLine("Nevermind, you are not a human :)");
+				Thread.Sleep(TimeSpan.MaxValue);
+			}
 			server.Stop();
 		}
 	}
