@@ -28,5 +28,5 @@
 *~
 .project
 /packages/
-/Server/bin/
-/Server/obj/
+/bin/
+/obj/
