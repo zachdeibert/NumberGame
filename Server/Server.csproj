@@ -93,6 +93,7 @@
     <Compile Include="NumberGame\Server\SerialPlayer.cs" />
     <Compile Include="NumberGame\Server\SerialGame.cs" />
     <Compile Include="NumberGame\Server\BasicResponse.cs" />
+    <Compile Include="NumberGame\Server\SocketLogFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

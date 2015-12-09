@@ -118,7 +118,7 @@ namespace NumberGame.Server {
 			config.Port = 8080;
 			Console.WriteLine("Starting server on port 8080.");
 			WebSocketServer server = new WebSocketServer();
-			if ( !server.Setup(config) ) {
+			if ( !server.Setup(config, null, null, new SocketLogFactory(), null, null) ) {
 				Console.Error.WriteLine("Unable to configure server!");
 				Console.ReadKey();
 				return;
