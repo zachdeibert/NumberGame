@@ -59,25 +59,25 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="SuperSocket.Common">
-      <HintPath>..\packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.Common.dll</HintPath>
+      <HintPath>packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.Common.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.Facility">
-      <HintPath>..\packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.Facility.dll</HintPath>
+      <HintPath>packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.Facility.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.SocketBase">
-      <HintPath>..\packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.SocketBase.dll</HintPath>
+      <HintPath>packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.SocketBase.dll</HintPath>
     </Reference>
     <Reference Include="SuperSocket.SocketEngine">
-      <HintPath>..\packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.SocketEngine.dll</HintPath>
+      <HintPath>packages\SuperWebSocketNETServer.0.8\lib\net45\SuperSocket.SocketEngine.dll</HintPath>
     </Reference>
     <Reference Include="SuperWebSocket">
-      <HintPath>..\packages\SuperWebSocketNETServer.0.8\lib\net45\SuperWebSocket.dll</HintPath>
+      <HintPath>packages\SuperWebSocketNETServer.0.8\lib\net45\SuperWebSocket.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
+      <HintPath>packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System.Configuration" />
   </ItemGroup>
@@ -111,5 +111,25 @@
   </ProjectExtensions>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web\connect.css" />
+    <Content Include="web\connect.html" />
+    <Content Include="web\connect.js" />
+    <Content Include="web\eula.html" />
+    <Content Include="web\eula.js" />
+    <Content Include="web\index.html" />
+    <Content Include="web\init.js" />
+    <Content Include="web\lobby.css" />
+    <Content Include="web\lobby.html" />
+    <Content Include="web\lobby.js" />
+    <Content Include="web\network.js" />
+    <Content Include="web\page.css" />
+    <Content Include="web\play.css" />
+    <Content Include="web\play.html" />
+    <Content Include="web\play.js" />
+    <Content Include="web\rules.css" />
+    <Content Include="web\rules.html" />
+    <Content Include="web\sysreq.css" />
   </ItemGroup>
 </Project>
