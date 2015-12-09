@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!--
+			index.html
+			
+			Author:
+				Zach Deibert <zachdeibert@gmail.com>
+			
+			Copyright (c) 2015 Zach Deibert
+			
+			Permission is hereby granted, free of charge, to any person obtaining a copy
+			of this software and associated documentation files (the "Software"), to deal
+			in the Software without restriction, including without limitation the rights
+			to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+			copies of the Software, and to permit persons to whom the Software is
+			furnished to do so, subject to the following conditions:
+			
+			The above copyright notice and this permission notice shall be included in
+			all copies or substantial portions of the Software.
+			
+			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+			IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+			FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+			AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+			LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+			OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+			THE SOFTWARE.
+		-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="Number Game" />
+		<meta name="author" content="Zach Deibert" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<title>
+			Number Game
+		</title>
+		<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu" />
+		<link rel="stylesheet" type="text/css" href="page.css" />
+		<link rel="stylesheet" type="text/css" href="sysreq.css" />
+		<link rel="stylesheet" type="text/css" href="connect.css" />
+		<link rel="stylesheet" type="text/css" href="lobby.css" />
+		<link rel="stylesheet" type="text/css" href="play.css" />
+		<link rel="stylesheet" type="text/css" href="rules.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script type="text/javascript" src="network.js"></script>
+		<script type="text/javascript" src="connect.js"></script>
+		<script type="text/javascript" src="lobby.js"></script>
+		<script type="text/javascript" src="play.js"></script>
+		<script type="text/javascript" src="eula.js"></script>
+	</head>
+	<body ng-app="numberGame" ng-controller="numberGameCtrl">
+		<input type="text" ng-model="refresh" />
+		<div id="sysreq" class="page" style="display: block;">
+			<table border="1">
+				<tr><th colspan="3">System Requirements</th></tr>
+				<tr><th>Internet Browser</th>           <th>Minimum Version Required</th><th>Minimum Version Recommended</th></tr>
+				<tr><td>Apple Safari</td>               <td>6.1</td>                     <td>6.1</td></tr>
+				<tr><td>Google Chrome</td>              <td>10.0</td>                    <td>10.0</td></tr>
+				<tr><td>Microsoft Edge</td>             <td>12.0</td>                    <td>12.0</td></tr>
+				<tr><td>Microsoft Internet Explorer</td><td>10.0</td>                    <td>10.0</td></tr>
+				<tr><td>Mozilla Firefox</td>            <td>3.6</td>                     <td>3.6</td></tr>
+				<tr><td>Netscape</td>                   <td>NaN</td>                     <td>NaN</td></tr>
+				<tr><td>Opera</td>                      <td>12.1</td>                    <td>12.1</td></tr>
+				<noscript>
+					<tr><th colspan="3" class="error">Also, be sure to enable JavaScript!</th></tr>
+				</noscript>
+			</table>
+		</div>
+		<div id="connect" class="page" ng-include="'connect.html'"></div>
+		<div id="lobby" class="page" ng-include="'lobby.html'"></div>
+		<div id="play" class="page" ng-include="'play.html'"></div>
+		<div id="rules" class="page modal fade" role="dialog" ng-include="'rules.html'"></div>
+		<div id="eula" class="page modal fade" role="dialog" ng-include="'eula.html'"></div>
+		<script type="text/javascript" src="init.js"></script>
+	</body>
+</html>

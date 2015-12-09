@@ -1,0 +1,86 @@
+<!--
+	rules.html
+	
+	Author:
+		Zach Deibert <zachdeibert@gmail.com>
+	
+	Copyright (c) 2015 Zach Deibert
+	
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.
+-->
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button class="close" data-dismiss="modal">
+				&times;
+			</button>
+			<h4 class="modal-title">
+				Number Game Rules
+			</h4>
+		</div>
+		<div class="modal-body">
+			<h5>
+				Set-up
+			</h5>
+			<p>
+				You will see a list of people who are currently connected to the server and are not currently playing a game on the right side of the lobby.
+				If you want to start a game, you can select people's names to add them to your new game.
+				Each game must have at least three people.
+				Also, you will be able to change the size of the game on the left side of the lobby.
+				The size must not be less than two or greater than sixteen.
+				Under the size box, there is a list of people in your new game in the order their turns will be.
+				Each of those people you select will be added to your game immediately after you press the start button.
+			</p>
+			<h5>
+				Playing the Game
+			</h5>
+			<p>
+				An indicator will show at the top of your screen when it is your turn.
+				Also, in the list of players in your game on the right of the screen, the person whose turn it is will be italicized.
+				When it is your turn, you can select a row on the triangle to modify, then you will see numerous text boxes appear at the bottom of your screen.
+				You can adjust these values, then press the take turn button to sumbit your turn.
+				Then, it will be the next person's turn and you will see your changes appear on the triangle.
+				Each box must be greater than or equal to zero, and you cannot increase the values on the triangle.
+			</p>
+			<h5>
+				Ending the Game
+			</h5>
+			<p>
+				The game ends when one of two things occur.
+				Either all players except one will be out or all of the tiles on the triangle will become zero.
+				Any players still in the game will receive points for winning.
+				After this, you will be returned to the lobby where you can start a new game.
+			</p>
+			<h5>
+				Ways to Get Out
+			</h5>
+			<p>
+				There are two ways to get out.
+				Either you can remove the last tile on the board with a one, or you can remove the last tile on the board with a number greater than one.
+				However, if you remove the tile with a one, then another players lowers a number greater than one to a one, you will be revived.
+				Because of this, you must make sure to stay in the game for the entire game and not leave after you become out.
+			</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-default" data-dismiss="modal">
+				Close
+			</button>
+		</div>
+	</div>
+</div>

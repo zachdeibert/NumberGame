@@ -1,0 +1,76 @@
+/*
+ * connect.css
+ * 
+ * Author:
+ * 	   Zach Deibert <zachdeibert@gmail.com>
+ * 
+ * Copyright (c) 2015 Zach Deibert
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+.large-display .help, .large-display .players {
+	position: fixed;
+}
+#lobby .name {
+	top: 0;
+	left: 0;
+	background: #000000;
+	padding: 10px;
+	color: #FFFFFF;
+	opacity: 0.9;
+}
+#lobby .name button {
+	margin-left: 10px;
+}
+#lobby .large-display .players {
+	top: 0;
+	right: 0;
+}
+#lobby .large-display .help {
+	bottom: 0;
+	left: 0;
+	width: 40%;
+}
+#lobby .help {
+	margin: 10px;
+}
+#lobby .large-display .setup {
+	margin-bottom: 40px;
+}
+#lobby form .input-group {
+	margin-top: 10px;
+}
+#lobby .large-display, #lobby .large-display .setup, #lobby form, #lobby .container, #lobby .input-group, #lobby form input[type="text"], #lobby form button {
+	width: 100%;
+}
+#lobby ul {
+	list-style-type: none;
+}
+
+@media (min-width: 992px) {
+	#lobby .name {
+		border-radius: 0 0 15px 0;
+		position: fixed;
+	}
+}
+@media (max-width: 991px) {
+	#lobby .name {
+		width: 100%;
+	}
+}

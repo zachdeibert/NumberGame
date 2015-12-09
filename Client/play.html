@@ -1,0 +1,89 @@
+<!--
+	play.html
+	
+	Author:
+		Zach Deibert <zachdeibert@gmail.com>
+	
+	Copyright (c) 2015 Zach Deibert
+	
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+	
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
+	
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.
+-->
+<div>
+	<h4 ng-if="game.match.turn == game.you">
+		Your turn!
+	</h4>
+	<table border="0" style="margin-top: {{ -16 * game.match.board.length }}px; margin-left: {{ -32 * game.match.board.length }}px;">
+		<tr ng-repeat="row in game.match.board track by $index">
+			<td ng-if="game.match.turn == game.you">
+				<input type="radio" value="{{ row.length - 1 }}" name="row" ng-model="play.row" onclick="NumberGame.Client.Play.copyValues(this.value)" />
+			</td>­
+			<td colspan="{{ game.match.board.length - row.length }}" ng-if="game.match.board.length - row.length > 0"></td>
+			<td ng-repeat="col in row track by $index" colspan="2" class="number">
+				<span ng-if="col > 0">
+					{{ col }}
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<th ng-if="game.match.turn == game.you"></th>
+			<th ng-repeat="row in game.match.board track by $index"></th>
+			<th ng-repeat="row in game.match.board track by $index"></th>
+		</tr>
+	</table>
+	<ul>
+		<span ng-repeat="player in game.match.players">
+			<li ng-if="player == game.match.removedOne" name="Removed the last 1" class="lost">
+				{{ game.playerLookup[player].name }}
+				<span class="badge">
+					{{ game.playerLookup[player].score }}
+				</span>
+			</li>
+			<li ng-if="player == game.match.removedAboveOne" name="Removed the last >1" class="lost">
+				{{ game.playerLookup[player].name }}
+				<span class="badge">
+					{{ game.playerLookup[player].score }}
+				</span>
+			</li>
+			<li ng-if="player == game.match.turn" class="turn">
+				{{ game.playerLookup[player].name }}
+				<span class="badge">
+					{{ game.playerLookup[player].score }}
+				</span>
+			</li>
+			<li ng-if="player != game.match.turn && player != game.match.removedOne && player != game.match.removedAboveOne">
+				{{ game.playerLookup[player].name }}
+				<span class="badge">
+					{{ game.playerLookup[player].score }}
+				</span>
+			</li>
+		</span>
+	</ul>
+	<form onsubmit="return NumberGame.Client.Play.takeTurn()">
+		<ol ng-if="game.match.turn == game.you">
+			<li ng-repeat="i in range(play.row / 1 + 1)" style="width: {{ 100 / (play.row / 1 + 2) }}%">
+				<input type="number" min="0" max="{{ game.match.board[play.row / 1][i] }}" ng-model="play.turn[i]" />
+			</li>
+			<li ng-if="play.row >= 0" style="width: {{ 100 / (play.row / 1 + 2) }}%">
+				<button class="btn btn-default btn-xs">
+					Take Turn
+				</button>
+			</li>
+		</ol>
+	</form>
+</div>

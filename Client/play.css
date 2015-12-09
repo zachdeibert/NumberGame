@@ -1,0 +1,86 @@
+/*
+ * play.css
+ * 
+ * Author:
+ * 	   Zach Deibert <zachdeibert@gmail.com>
+ * 
+ * Copyright (c) 2015 Zach Deibert
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+#play h4 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 4;
+	text-align: center;
+	color: #00FF00;
+}
+#play table {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+}
+#play table td.number {
+	text-align: center;
+	background: #FFFFFF;
+	height: 32px;
+	border: 1px solid #000000;
+}
+#play table th {
+	width: 32px;
+	height: 0;
+}
+#play ul {
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	list-style-type: none;
+	padding: 10px;
+	height: 100%;
+	overflow-y: auto;
+}
+#play li.lost {
+	color: #FF0000;
+}
+#play li.turn {
+	font-style: italic;
+}
+#play ol {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 3;
+	list-style-type: none;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+}
+#play ol li {
+	float: left;
+}
+#play ol input, #play button {
+	width: 90%;
+}
+#play button {
+	height: 28px;
+}
