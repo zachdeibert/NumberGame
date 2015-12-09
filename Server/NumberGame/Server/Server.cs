@@ -137,7 +137,7 @@ namespace NumberGame.Server {
 				Console.ReadKey();
 			} catch ( InvalidOperationException ) {
 				Console.WriteLine("Nevermind, you are not a human :)");
-				Thread.Sleep(TimeSpan.MaxValue);
+				Thread.Sleep(int.MaxValue);
 			}
 			server.Stop();
 		}
