@@ -64,23 +64,23 @@ namespace NumberGame.Server {
 				Console.Error.WriteLine(exception);
 			}
 
-			public void Log(string level, string format, object arg0, object arg1, object arg2) {
+			public void LogFormat(string level, string format, object arg0, object arg1, object arg2) {
 				Log(level, string.Format(format, arg0, arg1, arg2));
 			}
 
-			public void Log(string level, string format, object arg0, object arg1) {
+			public void LogFormat(string level, string format, object arg0, object arg1) {
 				Log(level, string.Format(format, arg0, arg1));
 			}
 
-			public void Log(string level, IFormatProvider provider, string format, params object[] args) {
+			public void LogFormat(string level, IFormatProvider provider, string format, params object[] args) {
 				Log(level, string.Format(provider, format, args));
 			}
 
-			public void Log(string level, string format, params object[] args) {
+			public void LogFormat(string level, string format, params object[] args) {
 				Log(level, string.Format(format, args));
 			}
 
-			public void Log(string level, string format, object arg0) {
+			public void LogFormat(string level, string format, object arg0) {
 				Log(level, string.Format(format, arg0));
 			}
 
@@ -114,23 +114,23 @@ namespace NumberGame.Server {
 			}
 
 			public void ErrorFormat(string format, object arg0, object arg1, object arg2) {
-				Log("Error", format, arg0, arg1, arg2);
+				LogFormat("Error", format, arg0, arg1, arg2);
 			}
 
 			public void ErrorFormat(string format, object arg0, object arg1) {
-				Log("Error", format, arg0, arg1);
+				LogFormat("Error", format, arg0, arg1);
 			}
 
 			public void ErrorFormat(IFormatProvider provider, string format, params object[] args) {
-				Log("Error", provider, format, args);
+				LogFormat("Error", provider, format, args);
 			}
 
 			public void ErrorFormat(string format, params object[] args) {
-				Log("Error", format, args);
+				LogFormat("Error", format, args);
 			}
 
 			public void ErrorFormat(string format, object arg0) {
-				Log("Error", format, arg0);
+				LogFormat("Error", format, arg0);
 			}
 
 			public void Fatal(object message) {
@@ -142,23 +142,23 @@ namespace NumberGame.Server {
 			}
 
 			public void FatalFormat(string format, object arg0, object arg1, object arg2) {
-				Log("Fatal", format, arg0, arg1, arg2);
+				LogFormat("Fatal", format, arg0, arg1, arg2);
 			}
 
 			public void FatalFormat(string format, object arg0, object arg1) {
-				Log("Fatal", format, arg0, arg1);
+				LogFormat("Fatal", format, arg0, arg1);
 			}
 
 			public void FatalFormat(IFormatProvider provider, string format, params object[] args) {
-				Log("Fatal", provider, format, args);
+				LogFormat("Fatal", provider, format, args);
 			}
 
 			public void FatalFormat(string format, params object[] args) {
-				Log("Fatal", format, args);
+				LogFormat("Fatal", format, args);
 			}
 
 			public void FatalFormat(string format, object arg0) {
-				Log("Fatal", format, arg0);
+				LogFormat("Fatal", format, arg0);
 			}
 
 			public void Info(object message) {
@@ -170,23 +170,23 @@ namespace NumberGame.Server {
 			}
 
 			public void InfoFormat(string format, object arg0, object arg1, object arg2) {
-				Log("Info", format, arg0, arg1, arg2);
+				LogFormat("Info", format, arg0, arg1, arg2);
 			}
 
 			public void InfoFormat(string format, object arg0, object arg1) {
-				Log("Info", format, arg0, arg1);
+				LogFormat("Info", format, arg0, arg1);
 			}
 
 			public void InfoFormat(IFormatProvider provider, string format, params object[] args) {
-				Log("Info", provider, format, args);
+				LogFormat("Info", provider, format, args);
 			}
 
 			public void InfoFormat(string format, params object[] args) {
-				Log("Info", format, args);
+				LogFormat("Info", format, args);
 			}
 
 			public void InfoFormat(string format, object arg0) {
-				Log("Info", format, arg0);
+				LogFormat("Info", format, arg0);
 			}
 
 			public void Warn(object message) {
@@ -198,23 +198,23 @@ namespace NumberGame.Server {
 			}
 
 			public void WarnFormat(string format, object arg0, object arg1, object arg2) {
-				Log("Warn", format, arg0, arg1, arg2);
+				LogFormat("Warn", format, arg0, arg1, arg2);
 			}
 
 			public void WarnFormat(string format, object arg0, object arg1) {
-				Log("Warn", format, arg0, arg1);
+				LogFormat("Warn", format, arg0, arg1);
 			}
 
 			public void WarnFormat(IFormatProvider provider, string format, params object[] args) {
-				Log("Warn", provider, format, args);
+				LogFormat("Warn", provider, format, args);
 			}
 
 			public void WarnFormat(string format, params object[] args) {
-				Log("Warn", format, args);
+				LogFormat("Warn", format, args);
 			}
 
 			public void WarnFormat(string format, object arg0) {
-				Log("Warn", format, arg0);
+				LogFormat("Warn", format, arg0);
 			}
 		}
 
