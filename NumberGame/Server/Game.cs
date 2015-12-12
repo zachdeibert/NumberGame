@@ -85,7 +85,7 @@ namespace NumberGame.Server {
 			return true;
 		}
 
-		public bool OnPlayerMove(Player player, byte row, byte[] deltas) {
+		public bool OnPlayerMove(Player player, byte row, ushort[] deltas) {
 			Lock.WaitOne();
 			Match match = GetMatch(player);
 			if ( match == null ) {

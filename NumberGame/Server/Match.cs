@@ -60,7 +60,7 @@ namespace NumberGame.Server {
 			return player == ParticipatingPlayers[Turn];
 		}
 
-		public bool TakeTurn(byte row, byte[] deltas, Player player, Game game) {
+		public bool TakeTurn(byte row, ushort[] deltas, Player player, Game game) {
 			if ( !IsTurn(player) ) {
 				return false;
 			}

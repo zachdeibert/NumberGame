@@ -29,7 +29,7 @@ namespace NumberGame.Server {
 	public class IncommingJson {
 		public string newName;
 		public byte row;
-		public byte[] turnDeltas;
+		public ushort[] turnDeltas;
 		public string[] players;
 		public byte size;
 		public bool ping;
@@ -52,7 +52,7 @@ namespace NumberGame.Server {
 				row = value;
 			}
 		}
-		public byte[] TurnDeltas {
+		public ushort[] TurnDeltas {
 			get {
 				return turnDeltas;
 			}
